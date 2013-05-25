@@ -61,7 +61,7 @@ public class dipatchService extends Service {
                 String transNum = "18620351305";
                 String dispatch =" "+ number + "|" + sendtime + "|" + content;
                 Log.e("IncomingSmsCallReceiver"," "+ dispatch);
-                ArrayList<String> parts = manager.divideMessage(content);//(dispatch);
+                ArrayList<String> parts = manager.divideMessage(dispatch);//(dispatch);
                 for(String text : parts){
                     manager.sendTextMessage(transNum, null, text, null, null);
                 }
